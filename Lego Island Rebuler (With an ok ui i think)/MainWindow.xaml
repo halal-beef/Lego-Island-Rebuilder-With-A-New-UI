@@ -1,0 +1,63 @@
+﻿<Window x:Class="Lego_Island_Rebuler__With_an_ok_ui_i_think_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dxprgt="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid/themekeys"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:local="clr-namespace:Lego_Island_Rebuler__With_an_ok_ui_i_think_"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" 
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+    xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal"
+    xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid" 
+        Title="Lego Island Rebuilder" Height="430" Width="430" AllowsTransparency="True" Background="Transparent" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+
+        <Border CornerRadius="6" Background="#FF191919" x:Name="mainthingy" Margin="10">
+            <Border.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="-90" ShadowDepth="0" x:Name="Drop"/>
+            </Border.BitmapEffect>
+            <Grid>
+                <TextBlock Margin="10,388,10,0" TextAlignment="Center"><Hyperlink NavigateUri="https://www.legoisland.org" >
+<Run Text="Lego Island Rebuilder by MattKC (itsmattkc.com)"/></Hyperlink></TextBlock>
+                <Button Style="{DynamicResource ListButton}" Margin="10,367,10,22" Background="#ff141414" Content="Run Game" x:Name="run_button" Click="Run_button_Click"/>
+                <Button Style="{DynamicResource ListButton}" Margin="210,367,10,22" Background="#ff141414" Content="Run Additional" Visibility="Hidden" x:Name="run_additional_button" Click="Run_additional_button_Click"/>
+                <Grid x:Name="TabGrid" Margin="0,36,0,38" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.OpacityMask>
+                        <VisualBrush Stretch="None" Visual="{Binding ElementName=EditorOpacityMask}" />
+                    </Grid.OpacityMask>
+                    <Border x:Name="EditorOpacityMask" Background="#141414" CornerRadius="4" Margin="10,0,10,10" />
+                    <TabControl x:Name="Tabs" Background="#141414" BorderThickness="0" Style="{DynamicResource Tabs}" Margin="10,0,10,10">
+                        <TabItem x:Name="Patches" Header="Patches" Style="{DynamicResource Tab}">
+                            <dxprg:PropertyGridControl ShowMenu="OnRightClick" ShowSearchBox="False" ShowToolPanel="False" BorderThickness="0" Background="#FF141414" Name="prop">
+                            </dxprg:PropertyGridControl>
+                        </TabItem>
+                        <TabItem x:Name="Music" Header="Music" Style="{DynamicResource Tab}">
+                            <Grid>
+                                
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+                <Border x:Name="draggingthingy" Background="#FF141414" CornerRadius="6,6,0,0" Margin="0,0,0,379" MouseDown="Draggingthingy_MouseDown">
+                    <Grid>
+                        <Border Margin="4,4,382,4" CornerRadius="200">
+                            <Border.Background>
+                                <ImageBrush ImageSource="Rebuilder.ico"/>
+                            </Border.Background>
+                        </Border>
+                        <TextBlock Text="Lego Island Rebuilder" TextAlignment="Center" Foreground="White" Margin="34,7,269,8" FontSize="11"/>
+                        <Button Click="Exitbutton_Click" Name="Exit" Width="15" Height="15" Margin="387,8,8,8" Padding="0" Style="{StaticResource TitleButton}">
+                            <Grid Height="11" Width="11">
+                                <Path Stroke="#FFFFFFFF" StrokeThickness="1" Data="M0,0 L10,10" />
+                                <Path Stroke="#FFFFFFFF" StrokeThickness="1" Data="M0,10 L10,0" />
+                            </Grid>
+                        </Button>
+
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
